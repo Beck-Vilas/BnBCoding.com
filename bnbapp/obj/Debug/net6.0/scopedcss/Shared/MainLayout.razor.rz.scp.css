@@ -1,0 +1,32 @@
+.page[b-xeiydn8ikv] {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: none;
+    background-size: cover;
+
+}
+[b-xeiydn8ikv] .page-layout,
+[b-xeiydn8ikv] .page-layout > .dx-gridlayout-root,
+[b-xeiydn8ikv] .layout-item {
+    background-color: inherit;
+}
+
+[b-xeiydn8ikv] .content {
+    padding: 1.1rem 2rem 0 2rem;
+    overflow: auto;
+}
+
+@media (max-width: 1199.98px) {
+    [b-xeiydn8ikv] .page-layout > .dx-gridlayout-root {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+}
+
+[b-xeiydn8ikv] .fit-width {
+    max-width: 100%;
+}
+
+[b-xeiydn8ikv] .mw-1100 {
+    max-width: 1100px;
+}

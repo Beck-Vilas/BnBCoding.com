@@ -1,0 +1,71 @@
+body[b-1qoh700ymo] {
+    background-color: #000;
+}
+
+
+.card[b-1qoh700ymo] {
+    width: 400px;
+    border: none;
+}
+
+
+
+
+.btr[b-1qoh700ymo] {
+    border-top-right-radius: 5px !important;
+}
+
+
+.btl[b-1qoh700ymo] {
+    border-top-left-radius: 5px !important;
+}
+
+.btn-dark[b-1qoh700ymo] {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+
+    .btn-dark:hover[b-1qoh700ymo] {
+        color: #fff;
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+    }
+
+
+.nav-pills[b-1qoh700ymo] {
+    display: table !important;
+    width: 100%;
+}
+
+    .nav-pills .nav-link[b-1qoh700ymo] {
+        border-radius: 0px;
+        border-bottom: 1px solid #0d6efd40;
+    }
+
+.nav-item[b-1qoh700ymo] {
+    display: table-cell;
+    background: #0d6efd2e;
+}
+
+
+.form[b-1qoh700ymo] {
+    padding: 10px;
+    height: 300px;
+}
+
+    .form input[b-1qoh700ymo] {
+        margin-bottom: 12px;
+        border-radius: 3px;
+    }
+
+
+        .form input:focus[b-1qoh700ymo] {
+            box-shadow: none;
+        }
+
+
+    .form button[b-1qoh700ymo] {
+        margin-top: 20px;
+    }

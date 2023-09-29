@@ -1,0 +1,213 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = bnbapp
+build_property.RootNamespace = bnbapp
+build_property.ProjectDir = C:\Users\beckv\Downloads\Latest BnbApp\bnbapp-20230318T010320Z-001-20230321T120433Z-001\bnbapp-20230318T010320Z-001\bnbapp\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\beckv\Downloads\Latest BnbApp\bnbapp-20230318T010320Z-001-20230321T120433Z-001\bnbapp-20230318T010320Z-001\bnbapp
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxJbmRleC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Pages/CompanyPage.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcGFueVBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Shared/BnBApp.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEJuQkFwcC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Shared/BrowserNotSupported.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXEJyb3dzZXJOb3RTdXBwb3J0ZWQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/Account.razor]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxBY2NvdW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-a9e4azwbpc
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/Admin.razor]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxBZG1pbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-ljz3xyj8pd
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/DelAccount.razor]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxEZWxBY2NvdW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-tkfwkn3fje
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/Edit.razor]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxFZGl0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-a097zxdr52
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/GetStarted.razor]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxHZXRTdGFydGVkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-2xguedqroc
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/Invoices.razor]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxJbnZvaWNlcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-ia0iei11rj
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/Orders.razor]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxPcmRlcnMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-anqazzuas2
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/Payment.razor]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxQYXltZW50LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-b9yxpf3xqh
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/ReEmail.razor]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZUVtYWlsLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-m0om4qu0t3
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/RePassword.razor]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZVBhc3N3b3JkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-0qhx71eiry
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/SelectedOrder.razor]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxTZWxlY3RlZE9yZGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-mb3o7hiqo8
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-xeiydn8ikv
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/About.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWJvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/ConfirmEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxDb25maXJtRW1haWxDaGFuZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/EmailChange.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxFbWFpbENoYW5nZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/Logo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/PostEmailChange.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxQb3N0RW1haWxDaGFuZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/PostFail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxQb3N0RmFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/PostPasswordRe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxQb3N0UGFzc3dvcmRSZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/PostRegister.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxQb3N0UmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/PostSuccess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxQb3N0U3VjY2Vzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNlbmRFbWFpbENvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/FAQ.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcRkFRLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcSG9tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/Team.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcVGVhbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Pages/Atest.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXRlc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Pages/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/beckv/Downloads/Latest BnbApp/bnbapp-20230318T010320Z-001-20230321T120433Z-001/bnbapp-20230318T010320Z-001/bnbapp/Shared/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXF9WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

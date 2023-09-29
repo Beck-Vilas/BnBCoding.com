@@ -1,0 +1,56 @@
+﻿@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+
+<DxLayoutBreakpoint MaxWidth="1200"
+                    @bind-IsActive="@IsMobileLayout" />
+
+<div class="page">
+    
+    @Body
+</div>
+
+@code {
+    string? NavMenuCssClass { get; set; }
+    bool _isMobileLayout;
+    bool IsMobileLayout
+    {
+        get => _isMobileLayout;
+        set
+        {
+            _isMobileLayout = value;
+            IsSidebarExpanded = !_isMobileLayout;
+        }
+    }
+
+    bool _isSidebarExpanded = false;
+    bool IsSidebarExpanded
+    {
+        get => _isSidebarExpanded;
+        set
+        {
+            if (_isSidebarExpanded != value)
+            {
+                NavMenuCssClass = value ? "expand" : "collapse";
+                _isSidebarExpanded = value;
+            }
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        NavigationManager.LocationChanged += OnLocationChanged;
+    }
+    async void OnLocationChanged(object? sender, LocationChangedEventArgs args)
+    {
+        if (IsMobileLayout)
+        {
+            IsSidebarExpanded = false;
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+
+    public void Dispose()
+    {
+        NavigationManager.LocationChanged -= OnLocationChanged;
+    }
+}

@@ -1,0 +1,705 @@
+﻿@page "/orders/{counter:int?}"
+@using Microsoft.AspNetCore.Identity
+@using bnbapp.Models;
+@inject bnbapp.IRepository.IOrderRepository OrderRepository;
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@inject AuthenticationStateProvider _authenticationStateProvider
+@layout BnBApp
+@inject NavigationManager uriHelper;
+@using System.Threading;
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>BnB Coding</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="~/css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+    @if (CurrentOrder() != null)
+    {
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+
+            <!-- Sidebar -->
+            <ul class="navbar-nav bg-gradient-purp sidebar sidebar-dark accordion" id="accordionSidebar">
+
+                <!-- Sidebar - Brand -->
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="account">
+                    <div class="sidebar-brand-icon rotate-n-15">
+                        <i class="fas fa-laugh-wink"></i>
+                    </div>
+                    <div class="sidebar-brand-text mx-3">Account</div>
+                </a>
+
+                <!-- Divider -->
+                <hr class="sidebar-divider center">
+
+                <!-- Nav Item - Dashboard -->
+                <li class="nav-item ">
+                    <a class="nav-link" href="account">
+
+                        <span class="fw-bold">Profile</span>
+                    </a>
+                </li>
+                @if (isAdmin)
+                {
+                    <li class="nav-item ">
+                        <a class="nav-link" href="administrator">
+                            Admin
+
+                        </a>
+                    </li>
+                }
+                @if (isBulk)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="bulkvita">
+                            <span> BulkVita </span>
+
+                        </a>
+                    </li>
+                }
+                <!-- Nav Item - Start -->
+                <li class="nav-item ">
+                    <a class="nav-link" href="start">
+
+                        <span>Get Started</span>
+                    </a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+
+                <!-- Heading -->
+                <div class="sidebar-heading">
+                    Account Settings
+                </div>
+
+                <!-- Nav Item - Edit -->
+                <li class="nav-item ">
+                    <a class="nav-link" href="edit">
+
+
+
+                        <span>Edit Details</span>
+                    </a>
+                </li>
+                
+                <!-- Nav Item - Payment Methods WIP!!!
+                <a class="nav-item collapsed" href="methods" data-toggle="collapse" data-target="#collapseTwo"
+                   aria-expanded="true" aria-controls="collapseTwo">
+
+                    <span>Payment Methods</span>
+                </a>
+                -->
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="orders">
+
+
+                        <span>Orders</span>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="invoices">
+
+
+                        <span>Invoices</span>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="repwd">
+
+
+                        <span>Change Password</span>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="reemail">
+
+
+                        <span>Change Email</span>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="delaccount">
+
+
+                        <span>Delete Account</span>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="logout">
+
+
+                        <span>Logout</span>
+                    </a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+
+                <!-- Heading -->
+                <div class="sidebar-heading">
+                    Information
+                </div>
+
+                <!-- Nav Item - Home -->
+                <li class="nav-item ">
+                    <a class="nav-link" href="home">
+
+
+                        <span>Home</span>
+                    </a>
+                </li>
+
+                <!-- Nav Item - About -->
+                <li class="nav-item ">
+                    <a class="nav-link" href="about">
+
+
+                        <span>About BnB</span>
+                    </a>
+                </li>
+                <!-- Nav Item - Team -->
+                <li class="nav-item ">
+                    <a class="nav-link" href="team">
+
+
+                        <span>Meet The Team</span>
+                    </a>
+                </li>
+                <!-- Nav Item - FAQs -->
+                <li class="nav-item ">
+                    <a class="nav-link" href="faq">
+
+
+                        <span>FAQs</span>
+                    </a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider d-none d-md-block">
+
+
+
+            </ul>
+            <!-- End of Sidebar -->
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+
+                <!-- Main Content -->
+                <div id="content">
+
+                    <!-- Topbar -->
+                    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+
+
+                        <!-- Home- Bnb Coding Tech -->
+                        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home">
+                            <div class="sidebar-brand-icon rotate-n-15">
+                                <i class="fas fa-laugh-wink"></i>
+                            </div>
+                            <div class="sidebar-brand-text mx-3">BnBCoding Tech</div>
+                        </a>
+
+                        <!-- Topbar Navbar -->
+                        <ul class="navbar-nav ml-auto">
+
+
+
+                            <!-- Nav Item - BnB logo -->
+                            <div class="ms-auto">
+                                <img class="float-end img-small4" alt="img-thumbnail" src="images/bnblogo.png" />
+                            </div>
+
+
+
+                            <div class="topbar-divider d-none d-sm-block"></div>
+
+                            <!-- Nav Item - User Information -->
+
+
+                            <h6 class="text-gray-600 pt-3">@userID</h6>
+
+
+
+                        </ul>
+
+                    </nav>
+                    <!-- End of Topbar -->
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+
+                        <!-- Page Heading -->
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                            <h1 class="h3 mb-0 text-gray-800">View Your Order.</h1>
+                            <!--Sends user to bottom of page-->
+                            
+
+                        </div>
+
+                        <!-- Content Row -->
+                        <div class="row">
+
+
+                            <!-- Content Row -->
+
+                            <div class="row">
+
+
+                                <div class="col-xl-3 col-md-6 mb-4">
+                                    <div class="card border-left-primary shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                        ProjName:
+                                                    </div>
+                                                    <div class="h6 font-weight-bold center-vert text-gray-800">@CurrentOrder().ProjName</div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-6 mb-4">
+                                    <div class="card border-left-success shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                        Start Date:
+                                                    </div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                        @CurrentOrder().Start
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-6 mb-4">
+                                    <div class="card border-left-info shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                        End Date:
+                                                    </div>
+                                                    <div class="row no-gutters align-items-center">
+                                                        <div class="col-auto">
+                                                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                                                @CurrentOrder().End
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-6 mb-4">
+                                    <div class="card border-left-success shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                        Progress:
+                                                    </div>
+                                                    <div class="col-auto">
+                                                        <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">@CurrentOrder().Completion%</div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="progress progress-sm mr-2">
+                                                            <div class="progress-bar bg-info" role="progressbar"
+                                                                 style=@getProgress() aria-valuenow="@current.Completion" aria-valuemin="0"
+                                                                 aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+
+                                    <div class="card shadow mb-4">
+                                        <div class="card-header py-3">
+                                            <h6 class="m-0 font-weight-bold text-primary">@current.ProjName</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <p class="alert-danger">@error</p>
+                                            <div class="input-group borderbox">
+                                                <span class="input-group-text"> <h6 class="font-weight-bold">Project Name:</h6></span>
+                                                <input @bind-value="current.ProjName" type="text" class=" form-control bg-light border-0 small" placeholder="Project Name" aria-label="Project Name" aria-describedby="basic-addon2">
+                                            </div>
+                                            <!--please create a vertical spacer-->
+
+                                            <p></p>
+                                            <div class="input-group borderbox">
+                                                <span class="input-group-text"> <h6 class="font-weight-bold">Company Name:</h6></span>
+                                                <input @bind-value="current.Company" type="text" class=" form-control bg-light border-0 small" placeholder="Company Name" aria-label="Company name" aria-describedby="basic-addon2">
+                                            </div>
+                                            <!--html spacer with a line-->
+                                            <p></p>
+                                            <div class="input-group borderbox">
+                                                <span class="input-group-text"><h6 class="font-weight-bold">Start Date:</h6></span>
+                                                <input type="date" @bind-value="sTime" class=" form-control bg-light border-0 small" placeholder="DD/MM/YYYY" aria-label="Search" aria-describedby="basic-addon2">
+                                            </div>
+                                            <p></p>
+                                            <div class="input-group borderbox">
+                                                <span class="input-group-text borderbox"><h6 class="font-weight-bold">End Date:</h6></span>
+                                            <input type="date" @bind-value="eTime" class=" form-control bg-light border-0 small" placeholder="DD/MM/YYYY" aria-label="Search" aria-describedby="basic-addon2">
+                                            </div>
+                                            <p></p>
+                                            
+                                            <div class="input-group borderbox">
+                                                <span class="input-group-text"><h6 class="font-weight-bold">Phone:</h6></span>
+                                                <input type="text" @bind-value="current.Phone" class=" form-control bg-light border-0 small" placeholder="Phone Number" aria-label="Phone Number" aria-describedby="basic-addon2">
+                                            </div>
+                                            <p></p>
+                                            <div class="input-group borderbox">
+                                                <span class="input-group-text"><h6 class="font-weight-bold">Website:</h6></span>
+                                                <input type="text" @bind-value="current.Website" class=" form-control bg-light border-0 small" placeholder="Website Link (if any)" aria-label="website" aria-describedby="basic-addon2">
+                                            </div>
+                                            <p></p>
+                                            <div class="input-group borderbox">
+                                                <span class="input-group-text">Project Description</span>
+                                                <textarea @bind="current.ProjDesc" class="form-control" aria-label="With textarea"></textarea>
+                                            </div>
+                                            <p></p>
+                                            <div class="h3 font-weight-bold">
+                                                <a href="/payment/@counter" class="alert-link ">Left To Pay: $ @invoiceAmountInUsdFirst.@centAmt</a>
+                                            </div>
+                                            <p></p>
+                                            @if (isAdmin)
+                                            {
+                                                <h1>ADMIN ONLY</h1>
+                                                <p></p>
+                                                <div class="input-group borderbox">
+                                                    <span class="input-group-text">Project Status</span>
+                                                    <select @bind="current.Status" class="form-select bg-whiter text-black" aria-label="Default select example">
+                                                        <option value="Pending">Pending</option>
+                                                        <option value="In Progress">In Progress</option>
+                                                        <option value="Completed">Completed</option>
+                                                        <option value="Terminated">Terminated</option>
+                                                    </select>
+                                                </div>
+                                                <p></p>
+                                                <div class="input-group borderbox">
+                                                    <span class="input-group-text">Project Payment Status:</span>
+                                                    <select @bind="current.Payment" class="form-select bg-whiter text-black" aria-label="Default select example">
+                                                        <option value="Pending">Pending</option>
+                                                        <option value="Unverified">Unverified</option>
+                                                        <option value="Completed">Completed</option>
+                                                        <option value="Terminated">Terminated</option>
+                                                    </select>
+                                                </div>
+                                                <p></p>
+                                                <div class="input-group borderbox">
+                                                    <span class="input-group-text"><h6 class="font-weight-bold">Total Earned(in dollars):</h6></span>
+                                                    <input type="text" @bind-value="totpayed" class=" form-control bg-light border-0 small " placeholder="" aria-label="website" aria-describedby="basic-addon2">
+                                                </div>
+                                                <p></p>
+                                                <div class="input-group borderbox">
+                                                    <span class="input-group-text"><h6 class="font-weight-bold">Completion:</h6></span>
+                                                    <input type="text" @bind-value="progress" class=" form-control bg-light border-0 small" placeholder="%30" aria-label="perecent completion" aria-describedby="basic-addon2">
+                                                </div>
+                                                <p></p>
+                                                    <div class="input-group borderbox">
+                                                    <span class="input-group-text"><h6 class="font-weight-bold">Total Cost(in dollars):</h6></span>
+
+                                                    <input type="text" @bind-value="totalAtEnd" class=" form-control bg-light border-0 small" placeholder="$100,000" aria-label="website" aria-describedby="basic-addon2">
+                                                    </div>
+<p></p>
+                                                <div class="input-group borderbox">
+                                                    <span class="input-group-text"><h6 class="font-weight-bold">Amount they Should Have Paid Us(in Dollars):</h6></span>
+
+                                                    <input type="text" @bind-value="CurrentTotal" class=" form-control bg-light border-0 small" placeholder="$100,000" aria-label="website" aria-describedby="basic-addon2">
+
+                                                </div> 
+                                        <p></p>
+<!--show the int Left To Pay-->
+                                                
+                                            }
+                                            
+                                            <div class="text-center pt-3">
+                                               <button class=" w-100 btn btn-lg btn-primary" @onclick="@(e=>SaveOrder())">Submit</button> 
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            <!-- /.container-fluid -->
+                                
+                        </div>
+                        <!-- End of Main Content -->
+                        <!-- Footer -->
+                        <footer class="sticky-footer bg-white" id="bottom">
+                            <div class="container my-auto text-center">
+                                <div class="copyright text-center my-auto">
+                                    <span>Copyright &copy; BnBCoding</span>
+                                </div>
+                            </div>
+                        </footer>
+                        <!-- End of Footer -->
+                    </div>
+                </div>
+                <!-- End of Content Wrapper -->
+            </div>
+        </div>
+        </div>
+        <!-- End of Page Wrapper -->
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            Please create an order with BnBcoding before going to this page.
+        </div>
+    }
+</body>
+
+</html>
+@code {
+    [Parameter]
+    public int counter { get; set; } = 0;
+    Order order = new Order();
+    List<Order> orders = new List<Order>();
+    DateTime sTime = DateTime.Today;
+    DateTime eTime = DateTime.Today;
+    string error = "";
+    string start;
+    string end;
+    int loopcount = 0;
+    int pcount = 0;
+    bool er = false;
+    Order current;
+    string totpayed;
+    string progress;
+    string totalAtEnd;
+    string CurrentTotal;
+    int leftToPay;
+    bool isAdmin = false;
+    string centAmt;
+    int invoiceAmountInUsdFirst;
+    int invoiceAmountInUsdSecond;
+    private void LoadOrders()
+    {
+        orders = new List<Order>();
+        orders = OrderRepository.Gets();
+
+    }
+    private Order CurrentOrder()
+    {
+
+        foreach (Order order in orders)
+        {
+            if (order.Email == userID || isAdmin)
+            {
+                if (order.Id == counter) return order;
+            }
+        }
+
+        return null;
+    }
+
+
+    string userID = "";
+    bool isSigned = false;
+    bool isBulk = false;
+    protected override async Task OnInitializedAsync()
+    {
+
+        LoadOrders();
+        var user = (await _authenticationStateProvider.GetAuthenticationStateAsync()).User;
+        if (user.Identity.IsAuthenticated)
+        {
+            isSigned = true;
+            userID = UserManager.GetUserName(user);
+            //if (UserManager.IsInRoleAsync(user, "Admin").Result) isAdmin = true;
+            if (userID == "bnbcoding.tech@gmail.com" || userID == "bnbcoding.technologies@gmail.com" || userID == "beck.vilas@gmail.com" || userID == "andrea.bella0816@gmail.com") isAdmin = true;
+            if (userID == "beck.vilas@gmail.com" || userID == "andrea.bella0816@gmail.com" || userID == "bnbcoding.technologies@gmail.com" || userID == "bulk.vita@gmail.com") isBulk = true;
+
+        }
+        if (CurrentOrder != null)
+        {
+            current = CurrentOrder();
+            progress = current.Completion.ToString();
+            totpayed = (current.TotalPayed/100).ToString();
+            totalAtEnd = (current.Total/100).ToString();
+            CurrentTotal = (current.TotalDue/100).ToString();
+            sTime = DateTime.Parse(current.Start);
+            eTime = DateTime.Parse(current.End);
+            leftToPay = current.TotalDue - current.TotalPayed;
+            invoiceAmountInUsdFirst = leftToPay/ 100;
+            invoiceAmountInUsdSecond = leftToPay % 100;
+            centAmt = invoiceAmountInUsdSecond.ToString();
+            if(centAmt.Length == 1)
+            {
+                centAmt = "0" + centAmt;
+            }
+        }
+        else isSigned = false;
+    }
+    private void SaveOrder()
+    {
+
+        error = "";
+        er = false;
+        int counting = 0;
+
+        if (current.Phone != null)
+        {
+            foreach (char i in current.Phone)
+            {
+                counting++;
+                if (!char.IsDigit(i)) er = true;
+            }
+            if (counting < 10) er = true;
+        }
+        else er = true;
+        counting = 0;
+        if (current.ProjDesc != null)
+        {
+            foreach (char i in current.ProjDesc)
+            {
+                counting++;
+                if (!char.IsLetterOrDigit(i) && i != ' ') er = true;
+            }
+            if (counting == 0) er = true;
+        }
+        else er = true;
+        counting = 0;
+        if (current.Company != null)
+        {
+            foreach (char i in current.Company)
+            {
+                counting++;
+                //if i is not a letter and a SPACE then er is true
+                if (!char.IsLetterOrDigit(i) && i != ' ') er = true;
+            }
+            if (counting == 0) er = true;
+        }
+        else er = true;
+        counting = 0;
+        if (current.ProjName != null)
+        {
+            foreach (char i in current.ProjName)
+            {
+                counting++;
+                //if i is not a letter and a SPACE then er is true
+                if (!char.IsLetterOrDigit(i) && i != ' ') er = true;
+            }
+            if (counting == 0) er = true;
+        }
+        else er = true;
+        if (current.Website != null)
+        {
+            foreach (char i in current.Website)
+            {
+
+                //if i contains anything other than a url character then er is true
+                if (!char.IsLetterOrDigit(i) && i != '.' && i != '/' && i != ':' && i != '-') er = true;
+
+            }
+        }
+        if (isAdmin)
+        {
+            if (totpayed != null || totpayed.Length != 0)
+            {
+                foreach (char i in totpayed)
+                {
+
+                    if (!char.IsDigit(i)) er = true;
+                }
+            }
+            else er = true;
+            if (totalAtEnd != null )
+            {
+                if(totalAtEnd.Length == 0) er = true;
+                foreach (char i in totalAtEnd)
+                {
+                    if (!char.IsDigit(i)) er = true;
+                }
+            }
+            else er = true;
+            if (CurrentTotal != null )
+            {
+                if (CurrentTotal.Length == 0) er = true;
+                foreach (char i in CurrentTotal)
+                {
+                    if (!char.IsDigit(i)) er = true;
+                }
+            }
+            else er = true;
+            if (progress != null)
+            {
+                if(progress.Length == 0) er = true;
+                foreach (char i in totpayed)
+                {
+                    if (!char.IsDigit(i)) er = true;
+                }
+            }
+            else er = true;
+        }
+
+        if (er) error = "No Empty Inputs, Please Enter At Least 10 digit Phone Number, Only Numbers For Phone Number";
+        else
+        {
+
+
+            if (current.Website == null) current.Website = "";
+
+            current.Start = sTime.ToShortDateString();
+            current.End = eTime.ToShortDateString();
+            if (isAdmin)
+            {
+                current.TotalPayed = int.Parse(totpayed) * 100;
+                current.Completion = int.Parse(progress);
+                current.TotalDue = int.Parse(CurrentTotal) * 100;
+                current.Total = int.Parse(totalAtEnd) * 100;
+            }
+
+            if (current.Id == 0) current = OrderRepository.Save(current);
+            else current = OrderRepository.Update(current);
+
+            // COMPANY 1
+            // COMPANY 2
+            // COMPANY 3
+            LoadOrders();
+            //refresh page
+            uriHelper.NavigateTo("/account", forceLoad: true);
+        }
+    }
+    private string getProgress()
+    {
+        return "width: " + progress + "%";
+    }
+}

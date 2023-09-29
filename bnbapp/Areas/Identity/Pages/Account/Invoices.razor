@@ -1,0 +1,404 @@
+﻿@page "/invoices"
+@using Microsoft.AspNetCore.Identity
+@using bnbapp.Models;
+@inject bnbapp.IRepository.IInvoiceRepository invoiceRepostiory;
+@inject bnbapp.IRepository.IOrderRepository OrderRepository;
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@inject AuthenticationStateProvider _authenticationStateProvider
+@layout BnBApp
+@inject IJSRuntime JsRuntime
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>BnB App - More Info</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="~/css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+    @if (isSigned)
+    {
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+
+            <!-- Sidebar -->
+            <ul class="navbar-nav bg-gradient-purp sidebar sidebar-dark accordion" id="accordionSidebar">
+
+                <!-- Sidebar - Brand -->
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="account">
+                    <div class="sidebar-brand-icon rotate-n-15">
+                        <i class="fas fa-laugh-wink"></i>
+                    </div>
+                    <div class="sidebar-brand-text mx-3">Account</div>
+                </a>
+
+                <!-- Divider -->
+                <hr class="sidebar-divider center">
+
+                <!-- Nav Item - Dashboard -->
+                <li class="nav-item ">
+                    <a class="nav-link" href="account">
+
+                        <span class="fw-bold">Profile</span>
+                    </a>
+                </li>
+                @if (isAdmin)
+                {
+                    <li class="nav-item ">
+                        <a class="nav-link" href="administrator">
+                            Admin
+
+                        </a>
+                    </li>
+                }
+                @if (isBulk)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="bulkvita">
+                            <span> BulkVita </span>
+
+                        </a>
+                    </li>
+                }
+                <!-- Nav Item - Start -->
+                <li class="nav-item ">
+                    <a class="nav-link" href="start">
+
+                        <span>Get Started</span>
+                    </a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+
+                <!-- Heading -->
+                <div class="sidebar-heading">
+                    Account Settings
+                </div>
+
+                <!-- Nav Item - Edit -->
+                <li class="nav-item ">
+                    <a class="nav-link" href="edit">
+
+
+                        <span>Edit Details</span>
+                    </a>
+                </li>
+                
+                <!-- Nav Item - Payment Methods WIP!!!
+                <a class="nav-item collapsed" href="methods" data-toggle="collapse" data-target="#collapseTwo"
+                   aria-expanded="true" aria-controls="collapseTwo">
+
+                    <span>Payment Methods</span>
+                </a>
+                -->
+
+                <li class="nav-item">
+                    <a class="nav-link" href="orders">
+
+
+                        <span>Orders</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="invoices">
+
+
+                        <span>Invoices</span>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="repwd">
+
+
+                        <span>Change Password</span>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="reemail">
+
+
+                        <span>Change Email</span>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="delaccount">
+
+
+                        <span>Delete Account</span>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="logout">
+
+
+                        <span>Logout</span>
+                    </a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+
+                <!-- Heading -->
+                <div class="sidebar-heading">
+                    Information
+                </div>
+
+                <!-- Nav Item - Home -->
+                <li class="nav-item ">
+                    <a class="nav-link" href="home">
+
+
+                        <span>Home</span>
+                    </a>
+                </li>
+
+                <!-- Nav Item - About -->
+                <li class="nav-item ">
+                    <a class="nav-link" href="about">
+
+
+                        <span>About BnB</span>
+                    </a>
+                </li>
+                <!-- Nav Item - Team -->
+                <li class="nav-item ">
+                    <a class="nav-link" href="team">
+
+
+                        <span>Meet The Team</span>
+                    </a>
+                </li>
+                <!-- Nav Item - FAQs -->
+                <li class="nav-item ">
+                    <a class="nav-link" href="faq">
+
+
+                        <span>FAQs</span>
+                    </a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider d-none d-md-block">
+
+
+            </ul>
+            <!-- End of Sidebar -->
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+
+                <!-- Main Content -->
+                <div id="content">
+
+                    <!-- Topbar -->
+                    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+
+
+                        <!-- Home- Bnb Coding Tech -->
+                        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home">
+
+                            <div class="sidebar-brand-text mx-3">BnBCoding Tech</div>
+                        </a>
+
+                        <!-- Topbar Navbar -->
+                        <ul class="navbar-nav ml-auto">
+
+
+
+                            <!-- Nav Item - BnB logo -->
+                            <div class="ms-auto">
+                                <img class="float-end img-small4" alt="img-thumbnail" src="images/bnblogo.png" />
+                            </div>
+
+
+
+                            <div class="topbar-divider d-none d-sm-block"></div>
+
+                            <!-- Nav Item - User Information -->
+
+
+                            <h6 class="text-gray-600 pt-3">@userID</h6>
+
+
+
+                        </ul>
+
+                    </nav>
+                    <!-- End of Topbar -->
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+
+                        <!-- Page Heading -->
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                            <h1 class="h3 mb-0 text-gray-800">View All Invoices</h1>
+                            
+                        </div>
+
+                        <!-- Content Row -->
+                        <div class="row">
+
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Invoice</h6>
+                                </div>
+                                <div class="card-body">
+                                   
+                                    <!--If statement that makes sure isActive is ture and width is more than 650px-->
+                                    @if(isActive)
+                                    {
+                                        <!-- css for this table that will make it not go off screen for mobile-->
+                                            <table class="table" width="20px">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Invoice Id</th>
+                                                    <th scope="col">Amount In U.S.D.</th>
+                                                    <th scope="col">Date Of Payment</th>
+                                                    <th scope="col">OrderId</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+                                        @foreach (Invoice invoice in active)
+                                        {
+                                        counter = counter + 1;
+                                            <tr>
+                                                <th scope="col">@counter</th>
+                                                <td>@invoice.BillingId</td>
+                                                <td>$@invoice.Amount</td>
+                                                <td>@invoice.Date</td>
+                                                <td><a href="orders/@invoice.OrderId">@invoice.OrderId</a></td>
+                                            </tr>
+                                                
+                                        }
+                                            </tbody>
+                                        </table>
+                                    }else{
+                                    <a href="orders">All Invoices Listed Here</a>
+                                    }
+                                    
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                        <!-- End of Main Content -->
+                        <!-- Footer -->
+                        <footer class="sticky-footer bg-white" id="bottom">
+                            <div class="container my-auto text-center">
+                                <div class="copyright text-center my-auto">
+                                    <span>Copyright &copy; BnBCoding</span>
+                                </div>
+                            </div>
+                        </footer>
+                        <!-- End of Footer -->
+                    </div>
+                </div>
+                <!-- End of Content Wrapper -->
+            </div>
+        </div>
+        <!-- End of Page Wrapper -->
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+            Please login or create an account. <a href="l" class="alert-link">Login</a>. <a href="r" class="alert-link">Register</a>.
+        </div>
+    }
+</body>
+
+</html>
+@code {
+    public int Width { get; set; }
+    Invoice invoice = new Invoice();
+    List<Invoice> invoices = new List<Invoice>();
+    bool isSigned = false;
+    bool isActive = false;
+    bool isPast = false;
+    string userID = "";
+    int counter = 0;
+    int tempDol = 0;
+    int tempCents = 0;
+    string tempercents = "";
+    List<Invoice> active = new List<Invoice>();
+
+    private void LoadInvoice()
+    {
+        invoices = new List<Invoice>();
+        //load invoices using invoiceRepository
+
+        invoices = invoiceRepostiory.Gets();
+
+    }
+    private void CurrentActiveInvoice()
+    {
+
+        foreach (Invoice invoice in invoices)
+        {
+            if (invoice.Email == userID)//if current email is the same as the email of the order<<that autocorrect was done by copilot SO SICK
+            {
+                //devide the value by 100 to get the dollar value and get the remander to get the cents
+                //check if invoice.Amount has a decimal
+                if (!invoice.Amount.Contains("."))
+                { 
+                    tempCents = int.Parse(invoice.Amount);
+                    tempDol = tempCents / 100;
+                    tempCents = tempCents % 100;
+                    tempercents = tempCents.ToString();
+                    if (tempercents.Length == 1)
+                    {
+                        tempercents = "0" + tempercents;
+                    }
+                    tempercents = tempDol.ToString() + "." + tempercents;
+                    invoice.Amount = tempercents;
+                }
+                active.Add(invoice);
+
+            }
+        }
+
+
+    }
+    bool isAdmin = false;
+    bool isBulk = false;
+    protected override async Task OnInitializedAsync()
+    {
+
+        
+        var user = (await _authenticationStateProvider.GetAuthenticationStateAsync()).User;
+        if (user.Identity.IsAuthenticated)
+        {
+            isSigned = true;
+            userID = UserManager.GetUserName(user);
+            if (userID == "bnbcoding.tech@gmail.com" || userID == "bnbcoding.technologies@gmail.com" || userID == "beck.vilas@gmail.com" || userID == "andrea.bella0816@gmail.com") isAdmin = true;
+            if (userID == "beck.vilas@gmail.com" || userID == "andrea.bella0816@gmail.com" || userID == "bnbcoding.technologies@gmail.com" || userID == "bulk.vita@gmail.com") isBulk = true;
+
+
+        }
+        LoadInvoice();
+        
+        
+        CurrentActiveInvoice();
+        
+        if (active.Count != 0) isActive = true;
+    }
+
+}
+        

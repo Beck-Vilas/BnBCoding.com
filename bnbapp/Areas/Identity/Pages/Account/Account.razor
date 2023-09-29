@@ -1,0 +1,468 @@
+﻿
+@page "/account"
+@using Microsoft.AspNetCore.Identity
+@using bnbapp.Models;
+@inject bnbapp.IRepository.IUserRepository UserRepository;
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@inject AuthenticationStateProvider _authenticationStateProvider
+@layout BnBApp
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes
+
+
+">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>BnBApp - BnB Coding Tech</title>
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="~/css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top" >
+    @if (isSigned) 
+    {
+    <!-- Page Wrapper -->
+            <div id="wrapper">
+
+                <!-- Sidebar -->
+                <ul class="navbar-nav bg-gradient-purp sidebar sidebar-dark accordion" id="accordionSidebar">
+
+                    <!-- Sidebar - Brand -->
+                    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="account">
+                        <div class="sidebar-brand-icon rotate-n-15">
+                            <i class="fas fa-laugh-wink"></i>
+                        </div>
+                        <div class="sidebar-brand-text mx-3">Account</div>
+                    </a>
+
+                    <!-- Divider -->
+                    <hr class="sidebar-divider center">
+
+                    <!-- Nav Item - Dashboard -->
+                    <li class="nav-item active">
+                        <a class="nav-link" href="account">
+     
+                            <span class="fw-bold">Profile</span>
+                        </a>
+                    </li>
+                @if (isAdmin)
+                {
+                    <li class="nav-item ">
+                        <a class="nav-link" href="administrator">
+                            <span>Admin</span>
+
+                        </a>
+                    </li>
+                }
+                @if (isBulk)
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="bulkvita">
+                            <span> BulkVita </span>
+
+                        </a>
+                    </li>
+                }
+                <!-- Nav Item - Start -->
+                    <li class="nav-item ">
+                        <a class="nav-link" href="start">
+     
+                            <span>Get Started</span>
+                        </a>
+                    </li>
+                    <!-- Divider -->
+                    <hr class="sidebar-divider">
+
+                    <!-- Heading -->
+                    <div class="sidebar-heading">
+                        Account Settings
+                    </div>
+
+                    <!-- Nav Item - Edit -->
+                    <li class="nav-item ">
+                        <a class="nav-link" href="edit">
+
+                           
+
+                            <span>Edit Details</span>
+                        </a>
+                    </li>
+
+                    <!-- Nav Item - Payment Methods WIP!!!
+                    <a class="nav-item collapsed" href="methods" data-toggle="collapse" data-target="#collapseTwo"
+                       aria-expanded="true" aria-controls="collapseTwo">
+                         
+                        <span>Payment Methods</span>
+                    </a>
+                    -->
+
+                    <li class="nav-item ">
+                        <a class="nav-link" href="orders">
+
+                             
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="invoices">
+
+
+                        <span>Invoices</span>
+                    </a>
+                </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="repwd">
+
+                             
+                            <span>Change Password</span>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="reemail">
+
+                             
+                            <span>Change Email</span>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="delaccount">
+
+                             
+                            <span>Delete Account</span>
+                        </a>
+                    </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="logout">
+
+
+                        <span>Logout</span>
+                    </a>
+                </li>
+                    <!-- Divider -->
+                    <hr class="sidebar-divider">
+
+                    <!-- Heading -->
+                    <div class="sidebar-heading">
+                        Information
+                    </div>
+
+                    <!-- Nav Item - Home -->
+                    <li class="nav-item ">
+                        <a class="nav-link" href="home">
+
+                             
+                            <span>Home</span>
+                        </a>
+                    </li>
+
+                    <!-- Nav Item - About -->
+                    <li class="nav-item ">
+                        <a class="nav-link" href="about">
+
+                             
+                            <span>About BnB</span>
+                        </a>
+                    </li>
+                    <!-- Nav Item - Team -->
+                    <li class="nav-item ">
+                        <a class="nav-link" href="team">
+
+                             
+                            <span>Meet The Team</span>
+                        </a>
+                    </li>
+                    <!-- Nav Item - FAQs -->
+                    <li class="nav-item ">
+                        <a class="nav-link" href="faq">
+
+                             
+                            <span>FAQs</span>
+                        </a>
+                    </li>
+                    <!-- Divider -->
+                    <hr class="sidebar-divider d-none d-md-block">
+
+                  
+
+                </ul>
+                <!-- End of Sidebar -->
+                <!-- Content Wrapper -->
+                <div id="content-wrapper" class="d-flex flex-column">
+
+                    <!-- Main Content -->
+                    <div id="content">
+
+                        <!-- Topbar -->
+                        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+
+
+                            <!-- Home- Bnb Coding Tech -->
+                            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home">
+                                <div class="sidebar-brand-icon rotate-n-15">
+                                    <i class="fas fa-laugh-wink"></i>
+                                </div>
+                                <div class="sidebar-brand-text mx-3">BnBCoding Tech</div>
+                            </a>
+
+                            <!-- Topbar Navbar -->
+                            <ul class="navbar-nav ml-auto">
+
+
+
+                                <!-- Nav Item - BnB logo -->
+                                <div class="ms-auto">
+                                    <img class="float-end img-small4" alt="img-thumbnail" src="images/bnblogo.png" />
+                                </div>
+
+
+
+                                <div class="topbar-divider d-none d-sm-block"></div>
+
+                                <!-- Nav Item - User Information -->
+
+
+                                <h6 class="text-gray-600 pt-3">@userID</h6>
+                                
+
+
+                            </ul>
+
+                        </nav>
+                        <!-- End of Topbar -->
+                        <!-- Begin Page Content -->
+                        <div class="container-fluid">
+
+                            <!-- Page Heading -->
+                            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                                <h1 class="h3 mb-0 text-gray-800">Profile</h1>
+                                <a href="start" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                                    Get Started With BnB Coding Tech
+                                </a>
+                            </div>
+
+                            <!-- Content Row -->
+                            <div class="row">
+
+
+                                <div class="col-xl-3 col-md-6 mb-4">
+                                    <div class="card border-left-primary shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                        Email:
+                                                    </div>
+                                                <div class="h6 font-weight-bold center-vert text-gray-800">@userID</div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-6 mb-4">
+                                    <div class="card border-left-success shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                        First Name:
+                                                    </div>
+                                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                    @if (isUser)
+                                                    {
+                                                        @FirstName()
+                                                    }else
+                                                    {
+                                                        <a href="edit">Please Add Details</a>
+                                                    }
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-6 mb-4">
+                                    <div class="card border-left-info shadow h-100 py-2">
+                                        <div class="card-body">
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col mr-2">
+                                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                        Last Name:
+                                                    </div>
+                                                    <div class="row no-gutters align-items-center">
+                                                        <div class="col-auto">
+                                                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                                            @if (isUser)
+                                                            {
+                                                                @LastName()
+                                                            }
+                                                            else
+                                                            {
+                                                                <a href="edit">Please Add Details</a>
+                                                            }
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card border-left-success shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                     Date of Birth:
+                                                </div>
+                                                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                                    @if (isUser)
+                                                    {
+                                                        @DOB()
+                                                    }
+                                                    else
+                                                    {
+                                                        <a href="edit">Please Add Details</a>
+                                                    }
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                
+                            </div>
+                            <!-- /.container-fluid -->
+
+                        </div>
+                        <!-- End of Main Content -->
+                        <!-- Footer -->
+                        <footer class="sticky-footer bg-white" id="bottom">
+                            <div class="container my-auto text-center">
+                                <div class="copyright text-center my-auto">
+                                    <span>Copyright &copy; BnBCoding</span>
+                                </div>
+                            </div>
+                        </footer>
+                        <!-- End of Footer -->
+                    </div>
+                </div>
+                <!-- End of Content Wrapper -->
+
+            </div>
+            <!-- End of Page Wrapper -->
+            <!-- Scroll to Top Button-->
+            <a class="scroll-to-top rounded" href="#page-top">
+                <i class="fas fa-angle-up"></i>
+            </a>
+     }else 
+     {
+            <div class="alert alert-danger" role="alert">
+                Please login or create an account. <a href="l" class="alert-link">Login</a>. <a href="r" class="alert-link">Register</a>.
+            </div>
+    }
+
+</body>
+
+</html>
+
+
+
+
+@code {
+    User user = new User();
+    List<User> users = new List<User>();
+    bool isSigned = false;
+    string userID ="";
+    User currentUser = new User();
+    bool isUser = false;
+
+    private void LoadUsers()
+    {
+        users = new List<User>();
+        users = UserRepository.Gets();
+    }
+    private void SaveUser()
+    {
+        if (user.Id == 0) user = UserRepository.Save(user);
+        else user = UserRepository.Update(user);
+        // COMPANY 1
+        // COMPANY 2
+        // COMPANY 3
+        LoadUsers(); //REFRESH
+    }
+    bool isAdmin = false;
+    bool isBulk = false;
+    protected override async Task OnInitializedAsync()
+    {
+        LoadUsers();
+        var user = (await _authenticationStateProvider.GetAuthenticationStateAsync()).User;
+        if (user.Identity.IsAuthenticated)
+        {
+            isSigned = true;
+            
+            userID = UserManager.GetUserName(user);
+            if (userID == "bnbcoding.tech@gmail.com" || userID == "bnbcoding.technologies@gmail.com" || userID == "beck.vilas@gmail.com" || userID == "andrea.bella0816@gmail.com") isAdmin = true;
+            if (userID == "beck.vilas@gmail.com" || userID == "andrea.bella0816@gmail.com" || userID == "bnbcoding.technologies@gmail.com" || userID == "bulk.vita@gmail.com") isBulk = true;
+
+        }
+        currentUser = CurrentUser();
+        if (CurrentUser() != null)
+        {
+            isUser = true;
+        }
+    }
+    private string FirstName()
+    {
+        return currentUser.FullName;
+    }
+    private string LastName()
+    {
+        return currentUser.LastName;
+    }
+    private string DOB()
+    {
+        return currentUser.Month + "/" + currentUser.Day + "/" + currentUser.Year;
+    }
+    private User CurrentUser()
+    {
+
+        foreach (User user in users)
+        {
+            if (user.Email == userID)
+            {
+                return user;
+            }          
+        }
+        return null;
+    }
+
+}

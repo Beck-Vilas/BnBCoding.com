@@ -1,0 +1,73 @@
+body[b-smyub7p0yv] {
+    background-color: #fff;
+}
+
+
+.card[b-smyub7p0yv] {
+    width: 480px;
+    border: none;
+    justify-content: center;
+}
+
+
+
+
+.btr[b-smyub7p0yv] {
+    border-top-right-radius: 5px !important;
+}
+
+
+.btl[b-smyub7p0yv] {
+    border-top-left-radius: 5px !important;
+}
+
+.btn-dark[b-smyub7p0yv] {
+    color: #fff;
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+
+    .btn-dark:hover[b-smyub7p0yv] {
+        color: #fff;
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+    }
+
+
+.nav-pills[b-smyub7p0yv] {
+    display: table !important;
+    width: 100%;
+}
+
+    .nav-pills .nav-link[b-smyub7p0yv] {
+        border-radius: 0px;
+        border-bottom: 1px solid #0d6efd40;
+    }
+
+.nav-item[b-smyub7p0yv] {
+    display: table-cell;
+    background: #0d6efd2e;
+    
+}
+
+
+.form[b-smyub7p0yv] {
+    padding: 10px;
+    height: 300px;
+}
+
+    .form input[b-smyub7p0yv] {
+        margin-bottom: 12px;
+        border-radius: 3px;
+    }
+
+
+        .form input:focus[b-smyub7p0yv] {
+            box-shadow: none;
+        }
+
+
+    .form button[b-smyub7p0yv] {
+        margin-top: 20px;
+    }

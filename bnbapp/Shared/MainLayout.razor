@@ -1,0 +1,54 @@
+﻿@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
+
+<DxLayoutBreakpoint MaxWidth="1200"
+                    @bind-IsActive="@IsMobileLayout" />
+
+
+<div class="page">
+    <nav class="navbar header-navbar p-0">
+        <div class="ms-3 fw-bold title pe-4">B&Bcoding Tech</div>
+        <a class="ms-auto h-100" href="" target="_blank" rel="noopener" aria-label="GitHub">
+            <img class="fit-width h-100" alt="img-thumbnail" src="images/githubbnb.png" />
+        </a>
+        <div class=" h-100">
+            <img class="float-end h-100" alt="img-thumbnail" src="images/bnblogo.png" />
+        </div>
+    </nav>
+    @Body
+</div>
+
+
+@code{
+    string? NavMenuCssClass { get; set; }
+    bool _isMobileLayout;
+    bool IsMobileLayout {
+        get => _isMobileLayout;
+        set {
+            _isMobileLayout = value;
+            IsSidebarExpanded = !_isMobileLayout;
+        }
+    }
+    bool _isSidebarExpanded = false;
+    bool IsSidebarExpanded {
+        get => _isSidebarExpanded;
+        set {
+            if(_isSidebarExpanded != value) {
+                NavMenuCssClass = value ? "expand" : "collapse";
+                _isSidebarExpanded = value;
+            }
+        }
+    }
+    protected override void OnInitialized() {
+        NavigationManager.LocationChanged += OnLocationChanged;
+    }
+    async void OnLocationChanged(object? sender, LocationChangedEventArgs args) {
+        if(IsMobileLayout) {
+            IsSidebarExpanded = false;
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+    public void Dispose() {
+        NavigationManager.LocationChanged -= OnLocationChanged;
+    }
+}

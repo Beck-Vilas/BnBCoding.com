@@ -1,0 +1,171 @@
+﻿@page "/l"
+@model LoginModel
+
+@{
+    Layout = "/Pages/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Log in";
+}
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+<!doctype html>
+
+<html lang="en" class="h-100 ">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="BNB CODING PROVIDES TOP OF LINE SOFTWARE SUCH AS APPLICATIONS & WEBSITES.">
+    <meta name="author" content="Beck V. & Ben S.">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>BnB Intro Page</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/cover/">
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.1/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.1/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
+    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#7952b3">
+
+
+    <style>
+        .card {
+            width: 520px;
+            border: none;
+        }
+        .bd-placeholder-img {
+            font-size: 1.525rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        body {
+            background-image: url(https://cdn.discordapp.com/attachments/1016488467322122383/1085725091763060736/bnbserverblur.png);
+            background-size: cover;
+            width: 100%;
+            overflow-x: hidden;
+            overflow-y: visible;
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="New.razor.css" rel="stylesheet">
+</head>
+<body class="h-100 text-center  bg-dark">
+    <div class=" d-flex w-75 h-75 p-1 mx-auto flex-column page">
+        <header class="mb-auto">
+            <div>
+                <nav class="nav nav-masthead justify-content-end float-md-end">
+                    <a class="nav-link"  href="home">Home</a>
+                    <a class="nav-link" href="about">About</a>
+                    <a class="nav-link" href="team">Team</a>
+                    <a class="nav-link" href="faq">FAQs</a>
+ 
+                    <a class="nav-link active" aria-current="page" href="l">Login</a>
+
+
+                    <a class="nav-link" href="r">Register</a>
+
+                </nav>
+            </div>
+
+        </header>
+        <main role="main" class="inner cover pt-5">2
+            <div class="d-flex justify-content-center align-items-center covering-container center-vert center1 pt-5">
+
+
+                <div class="card">
+
+                    <ul class="nav nav-pills covering-container mb-3" id="pills-tab" role="tablist">
+                        <li class="nav-item text-center">
+                            <a class="nav-link active btl" id="pills-home-tab" data-toggle="pill" href="#" role="tab" aria-controls="pills-home" aria-selected="true">Login</a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a class="nav-link btr" id="pills-profile-tab" data-toggle="pill" href="r" role="tab" aria-controls="pills-profile" aria-selected="false">Signup</a>
+                        </li>
+
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+
+                            <div class="form px-4 pt-5">
+                                <form id="account" method="post">
+                                    <h2>Use a local account to log in.</h2>
+                                    <hr />
+                                    <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+                                    <div class="form-floating mb-3">
+                                        <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                                        <label asp-for="Input.Email" class="form-label">Email</label>
+                                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-floating mb-3">
+                                        <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" placeholder="password" />
+                                        <label asp-for="Input.Password" class="form-label">Password</label>
+                                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                    </div>
+                                    <div class="checkbox mb-3">
+                                        <label asp-for="Input.RememberMe" class="form-label">
+                                            <input class="form-check-input" asp-for="Input.RememberMe" />
+                                            @Html.DisplayNameFor(m => m.Input.RememberMe)
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
+                                    </div>
+                                    <div>
+                                        <p>
+                                            <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+                                        </p>
+                                        <p>
+                                            <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+                                        </p>
+                                        <p>
+                                            <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Resend email confirmation</a>
+                                        </p>
+                                    </div>
+                                </form>
+                            </div>
+
+
+
+                        </div>
+                        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+
+
+            </div>
+        </main>
+
+        <footer class="mt-auto text-white-50">
+            <p class="mb-auto"></p>
+        </footer>
+    </div>
+
+
+
+</body>
+</html>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

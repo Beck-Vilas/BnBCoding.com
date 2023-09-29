@@ -1,0 +1,165 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\bnbapp.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\bnbapp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\bnbapp.csproj",
+        "projectName": "bnbapp",
+        "projectPath": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\bnbapp.csproj",
+        "packagesPath": "C:\\Users\\beckv\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\DevExpress 22.2\\Components\\Offline Packages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\beckv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.2.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\DevExpress 22.2\\Components\\System\\Components\\Packages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "DevExpress.Blazor": {
+              "target": "Package",
+              "version": "[22.2.4, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.0.0, )"
+            },
+            "Microsoft.AspNetCore.Components": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.AspNetCore.Components.Web": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.AspNetCore.Cryptography.Internal": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.AspNetCore.Cryptography.KeyDerivation": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
+            "Microsoft.Extensions.Hosting.WindowsServices": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.JSInterop": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.JSInterop.WebAssembly": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.3, )"
+            },
+            "Npm": {
+              "target": "Package",
+              "version": "[3.5.2, )"
+            },
+            "OpenAI": {
+              "target": "Package",
+              "version": "[1.7.2, )"
+            },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[41.13.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
+    <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
+    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\beckv\.nuget\packages\;C:\Program Files\DevExpress 22.2\Components\Offline Packages</NuGetPackageFolders>
+    <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.7.0</NuGetToolVersion>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <SourceRoot Include="C:\Users\beckv\.nuget\packages\" />
+    <SourceRoot Include="C:\Program Files\DevExpress 22.2\Components\Offline Packages\" />
+  </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore\7.0.4\buildTransitive\net6.0\Microsoft.EntityFrameworkCore.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore\7.0.4\buildTransitive\net6.0\Microsoft.EntityFrameworkCore.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets\7.0.0\buildTransitive\net6.0\Microsoft.Extensions.Configuration.UserSecrets.props" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets\7.0.0\buildTransitive\net6.0\Microsoft.Extensions.Configuration.UserSecrets.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore.design\7.0.4\build\net6.0\Microsoft.EntityFrameworkCore.Design.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore.design\7.0.4\build\net6.0\Microsoft.EntityFrameworkCore.Design.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.aspnetcore.identity.ui\7.0.4\build\Microsoft.AspNetCore.Identity.UI.props" Condition="Exists('$(NuGetPackageRoot)microsoft.aspnetcore.identity.ui\7.0.4\build\Microsoft.AspNetCore.Identity.UI.props')" />
+    <Import Project="C:\Program Files\DevExpress 22.2\Components\Offline Packages\devexpress.blazor.themes\22.2.4\buildTransitive\DevExpress.Blazor.Themes.props" Condition="Exists('C:\Program Files\DevExpress 22.2\Components\Offline Packages\devexpress.blazor.themes\22.2.4\buildTransitive\DevExpress.Blazor.Themes.props')" />
+    <Import Project="C:\Program Files\DevExpress 22.2\Components\Offline Packages\devexpress.blazor\22.2.4\buildTransitive\net5.0\DevExpress.Blazor.props" Condition="Exists('C:\Program Files\DevExpress 22.2\Components\Offline Packages\devexpress.blazor\22.2.4\buildTransitive\net5.0\DevExpress.Blazor.props')" />
+  </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgNode_js Condition=" '$(PkgNode_js)' == '' ">C:\Users\beckv\.nuget\packages\node.js\0.12.7</PkgNode_js>
+    <PkgNoGit Condition=" '$(PkgNoGit)' == '' ">C:\Users\beckv\.nuget\packages\nogit\0.1.0</PkgNoGit>
+    <PkgNpm Condition=" '$(PkgNpm)' == '' ">C:\Users\beckv\.nuget\packages\npm\3.5.2</PkgNpm>
+    <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\beckv\.nuget\packages\microsoft.codeanalysis.analyzers\3.3.3</PkgMicrosoft_CodeAnalysis_Analyzers>
+    <PkgMicrosoft_CodeAnalysis_AnalyzerUtilities Condition=" '$(PkgMicrosoft_CodeAnalysis_AnalyzerUtilities)' == '' ">C:\Users\beckv\.nuget\packages\microsoft.codeanalysis.analyzerutilities\3.3.0</PkgMicrosoft_CodeAnalysis_AnalyzerUtilities>
+    <PkgMicrosoft_EntityFrameworkCore_Tools Condition=" '$(PkgMicrosoft_EntityFrameworkCore_Tools)' == '' ">C:\Users\beckv\.nuget\packages\microsoft.entityframeworkcore.tools\7.0.4</PkgMicrosoft_EntityFrameworkCore_Tools>
+    <PkgDevExpress_Data Condition=" '$(PkgDevExpress_Data)' == '' ">C:\Program Files\DevExpress 22.2\Components\Offline Packages\devexpress.data\22.2.4</PkgDevExpress_Data>
+  </PropertyGroup>
+</Project>

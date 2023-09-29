@@ -1,0 +1,42 @@
+﻿@page "/"
+@inject NavigationManager uriHelper;
+@using Microsoft.AspNetCore.Identity
+@inject AuthenticationStateProvider _authenticationStateProvider
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@using System.Threading;
+
+<h1>Redirect Page</h1>
+
+<p>Redirecting to Default Page</p>
+
+@code {
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            if (isSigned)
+            {
+                uriHelper.NavigateTo("account", forceLoad: true);
+                 
+            }else
+            {
+             
+                uriHelper.NavigateTo("home", forceLoad: true);
+            }
+        }
+    }
+
+    bool isSigned = false;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        var user = (await _authenticationStateProvider.GetAuthenticationStateAsync()).User;
+        if (user.Identity.IsAuthenticated)
+        {
+            isSigned = true;
+        }
+    }
+}

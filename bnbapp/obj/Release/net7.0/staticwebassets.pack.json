@@ -1,0 +1,117 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\obj\\Release\\net7.0\\scopedcss\\projectbundle\\bnbapp.bundle.scp.css",
+      "PackagePath": "staticwebassets\\bnbapp.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\wwwroot\\css\\bootstrap\\bootstrap.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\wwwroot\\css\\open.iconic\\FONT-LICENSE.txt",
+      "PackagePath": "staticwebassets\\css\\open.iconic\\FONT-LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\wwwroot\\css\\open.iconic\\ICON-LICENSE.txt",
+      "PackagePath": "staticwebassets\\css\\open.iconic\\ICON-LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\wwwroot\\css\\open.iconic\\README.md",
+      "PackagePath": "staticwebassets\\css\\open.iconic\\README.md"
+    },
+    {
+      "Id": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\wwwroot\\css\\open.iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\open.iconic\\font\\css\\open-iconic-bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\wwwroot\\css\\open.iconic\\font\\fonts\\open-iconic.eot",
+      "PackagePath": "staticwebassets\\css\\open.iconic\\font\\fonts\\open-iconic.eot"
+    },
+    {
+      "Id": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\wwwroot\\css\\open.iconic\\font\\fonts\\open-iconic.otf",
+      "PackagePath": "staticwebassets\\css\\open.iconic\\font\\fonts\\open-iconic.otf"
+    },
+    {
+      "Id": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\wwwroot\\css\\open.iconic\\font\\fonts\\open-iconic.svg",
+      "PackagePath": "staticwebassets\\css\\open.iconic\\font\\fonts\\open-iconic.svg"
+    },
+    {
+      "Id": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\wwwroot\\css\\open.iconic\\font\\fonts\\open-iconic.ttf",
+      "PackagePath": "staticwebassets\\css\\open.iconic\\font\\fonts\\open-iconic.ttf"
+    },
+    {
+      "Id": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\wwwroot\\css\\open.iconic\\font\\fonts\\open-iconic.woff",
+      "PackagePath": "staticwebassets\\css\\open.iconic\\font\\fonts\\open-iconic.woff"
+    },
+    {
+      "Id": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\wwwroot\\images\\banner.png",
+      "PackagePath": "staticwebassets\\images\\banner.png"
+    },
+    {
+      "Id": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\wwwroot\\images\\beck.png",
+      "PackagePath": "staticwebassets\\images\\beck.png"
+    },
+    {
+      "Id": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\wwwroot\\images\\ben.png",
+      "PackagePath": "staticwebassets\\images\\ben.png"
+    },
+    {
+      "Id": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\wwwroot\\images\\bnbGitHubacc.png",
+      "PackagePath": "staticwebassets\\images\\bnbGitHubacc.png"
+    },
+    {
+      "Id": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\wwwroot\\images\\bnbabout.png",
+      "PackagePath": "staticwebassets\\images\\bnbabout.png"
+    },
+    {
+      "Id": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\wwwroot\\images\\bnblogo.png",
+      "PackagePath": "staticwebassets\\images\\bnblogo.png"
+    },
+    {
+      "Id": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\wwwroot\\images\\bnbmain.png",
+      "PackagePath": "staticwebassets\\images\\bnbmain.png"
+    },
+    {
+      "Id": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\wwwroot\\images\\bnbserverblur.png",
+      "PackagePath": "staticwebassets\\images\\bnbserverblur.png"
+    },
+    {
+      "Id": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\wwwroot\\images\\debug.log",
+      "PackagePath": "staticwebassets\\images\\debug.log"
+    },
+    {
+      "Id": "C:\\Users\\beckv\\Downloads\\Latest BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\wwwroot\\images\\sad.svg",
+      "PackagePath": "staticwebassets\\images\\sad.svg"
+    },
+    {
+      "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.bnbapp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.build.bnbapp.props",
+      "PackagePath": "build\\bnbapp.props"
+    },
+    {
+      "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.bnbapp.props",
+      "PackagePath": "buildMultiTargeting\\bnbapp.props"
+    },
+    {
+      "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.buildTransitive.bnbapp.props",
+      "PackagePath": "buildTransitive\\bnbapp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

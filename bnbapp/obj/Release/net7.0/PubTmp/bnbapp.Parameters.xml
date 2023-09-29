@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="BNBCoding" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\beckv\\Downloads\\Latest\ BnbApp\\bnbapp-20230318T010320Z-001-20230321T120433Z-001\\bnbapp-20230318T010320Z-001\\bnbapp\\obj\\Release\\net7\.0\\PubTmp\\Out\\$" />
+  </parameter>
+</parameters>

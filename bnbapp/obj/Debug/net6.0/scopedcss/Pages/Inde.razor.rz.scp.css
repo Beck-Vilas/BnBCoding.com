@@ -1,0 +1,49 @@
+
+
+.btn-secondary[b-ldz30vtfs1],
+.btn-secondary:hover[b-ldz30vtfs1],
+.btn-secondary:focus[b-ldz30vtfs1] {
+    color: #6c6cb2;
+    text-shadow: none; /* Prevent inheritance from `body` */
+}
+
+
+/*
+ * Base structure
+ */
+
+body[b-ldz30vtfs1] {
+    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+    box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+}
+
+.cover-container[b-ldz30vtfs1] {
+    max-width: auto;
+}
+
+
+/*
+ * Header
+ */
+
+.nav-masthead .nav-link[b-ldz30vtfs1] {
+    padding: .25rem 0;
+    font-weight: 700;
+    color: rgba(255, 255, 255, .5);
+    background-color: transparent;
+    border-bottom: .25rem solid transparent;
+}
+
+    .nav-masthead .nav-link:hover[b-ldz30vtfs1],
+    .nav-masthead .nav-link:focus[b-ldz30vtfs1] {
+        border-bottom-color: rgba(255, 255, 255, .25);
+    }
+
+    .nav-masthead .nav-link + .nav-link[b-ldz30vtfs1] {
+        margin-left: 1rem;
+    }
+
+.nav-masthead .active[b-ldz30vtfs1] {
+    color: #fff;
+    border-bottom-color: #fff;
+}

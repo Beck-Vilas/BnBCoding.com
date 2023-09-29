@@ -1,0 +1,89 @@
+﻿@page "/company"
+@using bnbapp.Models;
+@inject bnbapp.IRepository.ICompanyRepository CompanyRepository;
+
+<h3>Company</h3>
+<div class="row">
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-4">
+                <label>Razao Social</label>
+                <input type="text" class="form-control" @bind-value="company.Razao_Social" />
+            </div>
+            <div class="col-md-4">
+                <label>Telefone</label>
+                <input type="text" class="form-control" @bind-value="company.Telefone" />
+            </div>
+            <div class="col-md-4">
+                <label>Email</label>
+                <input type="text" class="form-control" @bind-value="company.Email" />
+            </div>
+            <br>
+            <button class="btn btn-success" @onclick="@(e=>SaveCompany())" >Save</button>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="row">
+    <div class="card">
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Razao Social</th>
+                        <th scope="col">Telefone</th>
+                        <th scope="col">Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(Company company in companies)
+                    {
+                        <tr>
+                            <td>@company.Id</td>
+                            <td>@company.Razao_Social</td>
+                            <td>@company.Telefone</td>
+                            <td>@company.Email</td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    Company company = new Company();
+    List<Company> companies = new List<Company>();
+
+    protected override void OnInitialized()
+    {
+        //EXECUTA ALGUMA COISA QUANDO A PAGINA É INICIADA.
+
+        LoadCompanies();
+    }
+
+    private void LoadCompanies()
+    {
+        companies = new List<Company>();
+        companies = CompanyRepository.Gets();
+
+    }
+
+    private void SaveCompany()
+    {
+        if (company.Id == 0) company = CompanyRepository.Save(company);
+        else company = CompanyRepository.Update(company);
+
+        // COMPANY 1
+        // COMPANY 2
+        // COMPANY 3
+        LoadCompanies(); //REFRESH
+
+    }
+
+}

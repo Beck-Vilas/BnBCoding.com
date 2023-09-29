@@ -1,0 +1,358 @@
+﻿@page "/bulkvita"
+@using Microsoft.AspNetCore.Identity
+@using bnbapp.Models;
+@using bnbapp.Repository;
+@inject bnbapp.IRepository.IOrderRepository OrderRepository;
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@inject AuthenticationStateProvider _authenticationStateProvider
+@layout BnBApp
+@inject bnbapp.IRepository.IInvoiceRepository InvoiceRepository;
+@inject bnbapp.IRepository.IEmailSaveRepo EmailSaveRepo;
+@inject bnbapp.IRepository.IEmailRepository EmailRepository;
+@inject bnbapp.IRepository.ISentEmailRepository SentEmailRepository;
+@inject NavigationManager NavigationManager;
+@using DevExpress.Blazor
+@using DevExpress.Blazor.Grid
+@using DevExpress.Blazor.Internal
+@using DevExpress.Blazor.Internal.Grid
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>BnBCoding</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="~/css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+    @if (isBulk)
+    {
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+
+            <!-- Sidebar -->
+            <ul class="navbar-nav bg-gradient-purp sidebar sidebar-dark accordion" id="accordionSidebar">
+
+                <!-- Sidebar - Brand -->
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="account">
+                    <div class="sidebar-brand-icon rotate-n-15">
+                        <i class="fas fa-laugh-wink"></i>
+                    </div>
+                    <div class="sidebar-brand-text mx-3">Account</div>
+                </a>
+
+                <!-- Divider -->
+                <hr class="sidebar-divider center">
+
+                <!-- Nav Item - Dashboard -->
+                <li class="nav-item ">
+                    <a class="nav-link" href="account">
+
+                        <span class="fw-bold">Profile</span>
+                    </a>
+                </li>
+                <!-- Nav Item - Start -->
+                <li class="nav-item ">
+                    <a class="nav-link" href="start">
+
+                        <span>Get Started</span>
+                    </a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+
+                <!-- Heading -->
+                <div class="sidebar-heading">
+                    Account Settings
+                </div>
+
+                <!-- Nav Item - Edit -->
+                <li class="nav-item ">
+                    <a class="nav-link" href="edit">
+
+
+                        <span>Edit Details</span>
+                    </a>
+                </li>
+
+                <!-- Nav Item - Payment Methods WIP!!!
+                <a class="nav-item collapsed" href="methods" data-toggle="collapse" data-target="#collapseTwo"
+                   aria-expanded="true" aria-controls="collapseTwo">
+                     
+                    <span>Payment Methods</span>
+                </a>
+                -->
+
+                <li class="nav-item ">
+                    <a class="nav-link" href="orders">
+
+                         
+                        <span>Orders</span>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="repwd">
+
+                         
+                        <span>Change Password</span>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="reemail">
+
+                         
+                        <span>Change Email</span>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="delaccount">
+
+                         
+                        <span>Delete Account</span>
+                    </a>
+                </li>
+                    
+                <li class="nav-item ">
+                        <a class="nav-link" href="logout">
+
+
+                            <span>Logout</span>
+                    </a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider">
+
+                <!-- Heading -->
+                <div class="sidebar-heading">
+                    Information
+                </div>
+
+                <!-- Nav Item - Home -->
+                <li class="nav-item ">
+                    <a class="nav-link" href="home">
+
+                         
+                        <span>Home</span>
+                    </a>
+                </li>
+
+                <!-- Nav Item - About -->
+                <li class="nav-item ">
+                    <a class="nav-link" href="about">
+
+                         
+                        <span>About BnB</span>
+                    </a>
+                </li>
+                <!-- Nav Item - Team -->
+                <li class="nav-item ">
+                    <a class="nav-link" href="team">
+
+                         
+                        <span>Meet The Team</span>
+                    </a>
+                </li>
+                <!-- Nav Item - FAQs -->
+                <li class="nav-item ">
+                    <a class="nav-link" href="faq">
+
+                         
+                        <span>FAQs</span>
+                    </a>
+                </li>
+                <!-- Divider -->
+                <hr class="sidebar-divider d-none d-md-block">
+
+            
+
+            </ul>
+            <!-- End of Sidebar -->
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+
+                <!-- Main Content -->
+                <div id="content">
+
+                    <!-- Topbar -->
+                    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+
+
+                        <!-- Home- Bnb Coding Tech -->
+                        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home">
+                            <div class="sidebar-brand-icon rotate-n-15">
+                                <i class="fas fa-laugh-wink"></i>
+                            </div>
+                            <div class="sidebar-brand-text mx-3">BnBCoding Tech</div>
+                        </a>
+
+                        <!-- Topbar Navbar -->
+                        <ul class="navbar-nav ml-auto">
+
+
+
+                            <!-- Nav Item - BnB logo -->
+                            <div class="ms-auto">
+                                <img class="float-end img-small4" alt="img-thumbnail" src="images/bnblogo.png" />
+                            </div>
+
+
+
+                            <div class="topbar-divider d-none d-sm-block"></div>
+
+                            <!-- Nav Item - User Information -->
+
+
+                            <h6 class="text-gray-600 pt-3">@userID</h6>
+
+
+
+                        </ul>
+
+                    </nav>
+                    <!-- End of Topbar -->
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+
+                        <!-- Page Heading -->
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                            <h1 class="h3 mb-0 text-gray-800">  BulkVita Panel</h1>
+                            
+                        </div>
+                        <!-- Show A buttons called Alibaba that is dark gray     @onclick="@(e=>AlibabaPage())"       @onclick="@(e=>SaveBulkEmails())"-->
+                        <div class="row">
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <a href="alibaba" class="btn btn-dark btn-lg btn-block" >Alibaba</a>
+                            </div>
+
+                            <div class="text-center pt-3">
+                                <button class="btn btn-lg btn-dark btn-block">Save EMAILS TO DATABASE</button>
+                            </div>
+
+
+                            
+
+
+
+
+                        </div>
+
+                            
+
+                        <!-- Content Row -->
+                        
+                        <!-- Content Row -->
+
+                        
+                        
+                    <!-- /.container-fluid -->
+            
+                
+                </div>
+                <!-- End of Main Content -->
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto text-center">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; BnBCoding</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
+                    </div>
+                    </div>
+                    </div>
+            
+            <!-- End of Content Wrapper -->
+
+        
+        
+        <!-- End of Page Wrapper -->
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+    
+    }
+    else
+    {
+        <div class="alert alert-danger" role="alert">
+           You Are Not Currently Signed In On BulkVita Acc.
+        </div>
+    }
+</body>
+
+</html>
+@code {
+    //devexpress data grid
+                                                         
+    
+    List<Order> orders = new List<Order>();
+    List<Invoice> invoices = new List<Invoice>();
+    List<Email> inbox = new List<Email>();
+    List<SentEmail> sent = new List<SentEmail>();
+    bool isSigned = false;
+    //bool isActive = false;
+    //bool isPast = false;
+    string userID = "";
+    int counter = 0;
+    int pcounter = 0;
+    bool isBulk = false;
+   // List<Order> active = new List<Order>();
+    //List<Order> past = new List<Order>();
+    private void LoadOrdersAndInvoices()
+    {
+        orders = new List<Order>();
+        orders = OrderRepository.Gets();
+        invoices = new List<Invoice>();
+        invoices = InvoiceRepository.Gets();
+        inbox = new List<Email>();
+        inbox = EmailRepository.Gets();
+        sent = new List<SentEmail>();
+        sent = SentEmailRepository.Gets();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+
+        
+        
+        
+
+        var user = (await _authenticationStateProvider.GetAuthenticationStateAsync()).User;
+        if (user.Identity.IsAuthenticated)
+        {
+            isSigned = true;
+            userID = UserManager.GetUserName(user);
+            if (userID == "beck.vilas@gmail.com" || userID == "andrea.bella0816@gmail.com" || userID == "bnbcoding.technologies@gmail.com" || userID == "bulk.vita@gmail.com") isBulk = true;
+        } 
+        //if user id is not an admin then they will be redirected to the home page
+       //if user is not signed in they will be redirected to the home page
+       //if not isBulk or isSigned then redirect to Index
+        if (!isBulk || !isSigned)
+        {
+            NavigationManager.NavigateTo("/");
+        }
+ 
+        LoadOrdersAndInvoices();
+
+
+       // if (active.Count != 0) isActive = true;
+       // if (past.Count != 0) isPast = true;
+    }
+    
+}

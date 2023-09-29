@@ -1,0 +1,122 @@
+﻿@page "/about"
+@model bnbapp.Pages.AboutModel
+@{
+    Layout = "/Pages/Shared/_Layout.cshtml";
+}
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!doctype html>
+
+<html lang="en" class="h-100 ">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="BNB CODING PROVIDES TOP OF LINE SOFTWARE SUCH AS APPLICATIONS & WEBSITES.">
+    <meta name="author" content="Beck V. & Ben S.">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>BnB Intro Page</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/cover/">
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.1/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.1/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
+    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#7952b3">
+
+
+    <style>
+       
+
+        .bd-placeholder-img {
+            font-size: 2.0rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        body {
+            background-image: url(https://cdn.discordapp.com/attachments/1016488467322122383/1085725091763060736/bnbserverblur.png);
+            background-size: cover;
+            width: 100%;
+            overflow-x: hidden;
+            overflow-y: visible;
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="New.razor.css" rel="stylesheet">
+</head>
+<body class="h-100 text-center bg-dark">
+    <div class=" d-flex w-75 h-75 p-1 mx-auto flex-column page">
+        <header class="mb-auto">
+            <div>
+                <nav class="nav nav-masthead justify-content-center float-md-end">
+                    <a class="nav-link" href="home">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#">About</a>
+                    <a class="nav-link" href="team">Team</a>
+                    <a class="nav-link" href="faq">FAQs</a>
+ 
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <a class="nav-link" href="start">Get Started</a>
+                        <a class="nav-link" href="account">@UserManager.GetUserName(User)!</a>
+
+
+                        <a class="nav-link" href="logout">Logout</a>
+
+                        
+                    }
+                    else
+                    {
+
+                        <a class="nav-link" href="l">Login</a>
+
+
+                        <a class="nav-link" href="r">Register</a>
+
+                    }
+                </nav>
+
+            </div>
+            
+        </header>
+        <img class="img-small center mb-auto" alt="img-thumbnail" src="images/bnblogo.png" />
+        <span class="">
+        <main role="main" class="inner cover ">
+            
+            <div class="gray-back" disabled>
+            
+            <h1 class="cover-heading text-bnb">About BnB Coding</h1>
+            <p class="lead text-bnb">BnB Coding charges based on the size of the project. We take our clients very seriously. In order to get started with BnB Coding please create an account and login. Once logged in open up the menu and find the Get Started tab, and enter in the form. Click on meet the team to learn more about the BnB Team.</p>
+
+                    <p class="lead">
+                        <a href="team" class="btn btn-light btn-lg btn-secondary">Meet the team</a>
+                    </p>
+            </div>
+            
+        </main>
+        </span>
+        
+        <footer class="mt-auto text-white-50">
+            <p class="mb-auto"></p>
+        </footer>
+    </div>
+
+
+
+</body>
+</html>
